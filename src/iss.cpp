@@ -30,6 +30,7 @@ namespace psi::iss {
         std::cout << "Information about the International Space Station (ISS)\n";
         std::cout << "-------------------------------------------------------\n";
 
+        bool daylight;
         auto issJSON = fetchData(config::iss::IP,
                                  config::iss::HOST,
                                  config::iss::PORT,
@@ -67,14 +68,13 @@ namespace psi::iss {
         date::sys_seconds sunsetTime = utils::getDatetime(utils::reformatDatetime(simplifiedSunsetTimestamp));
         date::sys_seconds issTime = utils::getDatetime(utils::reformatDatetime(issLastUpdate));
 
-        bool daylight;
         {
             using namespace date;
             daylight = issTime > sunriseTime && issTime < sunsetTime;
             if (daylight) {
-                std::cout << "ISS is in light\n";
+                std::cout << "ISS is currently in light\n";
             } else {
-                std::cout << "ISS is in darkness\n";
+                std::cout << "ISS is currently in light\n";
             }
         }
 
@@ -84,6 +84,10 @@ namespace psi::iss {
         auto hoursBeforeSunrise = static_cast<float>(secondsBeforeSunrise / 3600.0);
         auto hoursAfterSunset = static_cast<float>(secondsAfterSunset / 3600.0);
 
+        std::cout << "abs diff from sunrise (hours): " <<  hoursBeforeSunrise << '\n';
+        std::cout << "abs diff from sunset (hours): " <<  hoursAfterSunset << '\n';
+
+        std::cout << "\n";
         if ((issTime >= sunsetTime && hoursAfterSunset >= 1 && hoursAfterSunset <= 2) || (issTime <= sunriseTime && hoursBeforeSunrise >= 1 && hoursBeforeSunrise <= 2)) {
             std::cout << "It's the perfect time to observe the ISS fly by!\n";
         } else {
