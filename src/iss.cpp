@@ -30,7 +30,7 @@ namespace psi::iss {
         std::cout << "Information about the International Space Station (ISS)\n";
         std::cout << "-------------------------------------------------------\n";
 
-        bool daylight;
+        bool issDaylight;
         auto issJSON = fetchData(config::iss::IP,
                                  config::iss::HOST,
                                  config::iss::PORT,
@@ -70,11 +70,11 @@ namespace psi::iss {
 
         {
             using namespace date;
-            daylight = issTime > sunriseTime && issTime < sunsetTime;
-            if (daylight) {
+            issDaylight = issTime > sunriseTime && issTime < sunsetTime;
+            if (issDaylight) {
                 std::cout << "ISS is currently in light\n";
             } else {
-                std::cout << "ISS is currently in light\n";
+                std::cout << "ISS is currently in darkness\n";
             }
         }
 
@@ -93,10 +93,10 @@ namespace psi::iss {
         } else {
             std::cout << "It's NOT the perfect time to observe the ISS fly by :(\n";
             std::cout << "You have to wait until it gets closer to ";
-            if (!daylight) {
-                std::cout << "sunrise\n";
-            } else {
+            if (issDaylight) {
                 std::cout << "sunset\n";
+            } else {
+                std::cout << "sunrise\n";
             }
         }
         std::cout << "You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm\n";
