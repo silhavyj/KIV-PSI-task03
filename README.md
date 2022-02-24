@@ -3,6 +3,7 @@
 This project implements a simple REST API client that fetches information about the current position (latitude, longitude) of the International Space Station (ISS). As required, the program also prints out if the ISS is currently in daylight and whether it's the perfect time for its observation from Earth.
 
 <img src="img/02.png">
+<img src="img/03.gif">
 
 The perfect time to observe the ISS fly by is 1-2 hours after sunset or 1-2 hours before sunrise. You can also see the current position of the ISS over at https://spotthestation.nasa.gov/tracking_map.cfm. 
 
