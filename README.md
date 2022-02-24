@@ -53,15 +53,16 @@ If all went well, you'll be given the following output.
 ```
 Information about the International Space Station (ISS)
 -------------------------------------------------------
-latitude: -50.6539
-longitude: -170.0579
-last update: 2022-02-24 07:45:31 (UTC)
-ISS is currently in darkness
-abs diff from sunrise (hours): 8.91833
-abs diff from sunset (hours): 22.6756
+latitude: -11.8187
+longitude: 76.4382
+last update: 2022-02-24 08:56:36 (UTC)
+ISS is currently in light
+abs diff from sunrise (hours): 8.02833
+abs diff from sunset (hours): 4.39
 
 It's NOT the perfect time to observe the ISS fly by :(
-You have to wait until it gets closer to sunrise
+You have to wait until it passes sunset (1-2 hours after the sun goes down)
+
 You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm
 ```
 
@@ -86,6 +87,7 @@ abs diff from sunrise (hours): 1.93694
 abs diff from sunset (hours): 12.9194
 
 It's the perfect time to observe the ISS fly by!
+
 You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm
 ```
 

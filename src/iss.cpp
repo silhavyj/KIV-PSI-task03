@@ -117,13 +117,12 @@ namespace psi::iss {
             std::cout << "It's the perfect time to observe the ISS fly by!\n";
         } else {
             std::cout << "It's NOT the perfect time to observe the ISS fly by :(\n";
-            std::cout << "You have to wait until it gets closer to ";
             if (issDaylight) {
-                std::cout << "sunset\n";
+                std::cout << "You have to wait until it passes sunset (1-2 hours after the sun goes down)\n";
             } else {
-                std::cout << "sunrise\n";
+                std::cout << "You have to wait until it gets closer to sunrise (1-2 hours before the sun comes up)\n";
             }
         }
-        std::cout << "You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm\n";
+        std::cout << "\nYou can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm\n";
     }
 }
