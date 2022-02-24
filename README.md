@@ -48,7 +48,7 @@ The application doesn't take any parameters from the terminal. All you're requir
 ./kiv-psi-task03-silhavyj
 ```
 
-If all went well, you'll be given the following output
+If all went well, you'll be given the following output.
 
 ```
 Information about the International Space Station (ISS)
@@ -72,6 +72,21 @@ Information about the International Space Station (ISS)
 -------------------------------------------------------
 ERR: could not establish connection with to server
 ERR: no data has been received from the server
+```
+
+### Perfect time for observation
+```
+Information about the International Space Station (ISS)
+-------------------------------------------------------
+latitude: 44.3270
+longitude: -53.7812
+last update: 2022-02-24 08:22:35 (UTC)
+ISS is currently in darkness
+abs diff from sunrise (hours): 1.93694
+abs diff from sunset (hours): 12.9194
+
+It's the perfect time to observe the ISS fly by!
+You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm
 ```
 
 ## Implementation details
