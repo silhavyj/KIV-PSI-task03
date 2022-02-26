@@ -3,9 +3,18 @@
 This project implements a simple REST API client that fetches information about the current position (latitude, longitude) of the International Space Station (ISS). As required, the program also prints out if the ISS is currently in daylight and whether it's the perfect time for its observation from Earth.
 
 <img src="img/02.png">
-<img src="img/03.gif">
 
-The perfect time to observe the ISS fly by is 1-2 hours after sunset or 1-2 hours before sunrise. You can also see the current position of the ISS over at https://spotthestation.nasa.gov/tracking_map.cfm. 
+The perfect time to observe the ISS fly by is 1-2 hours after sunset or 1-2 hours before sunrise. You can also see the current position of the ISS over at https://spotthestation.nasa.gov/tracking_map.cfm.
+
+- [Used APIs](#used-apis)
+- [Build](#build)
+    * [Requirements](#requirements)
+    * [Compilation](#compilation)
+    * [External libraries](#external-libraries)
+- [Execution](#execution)
+    * [Perfect time for observation](#perfect-time-for-observation)
+- [Running in Docker](#running-in-docker)
+- [Implementation details](#implementation-details)
 
 ## Used APIs
 
@@ -42,6 +51,8 @@ Upon successful execution, a file called `kiv-psi-task03-silhavyj` should be cre
 As for external libraries, I decided to use the https://github.com/nlohmann/json library for JSON parsing. Also, I used the https://github.com/HowardHinnant/date library for datetime arithmetics. Both are header-only libraries statically linked to the executable file.
 
 ## Execution
+
+<img src="img/03.gif">
 
 The application doesn't take any parameters from the terminal. All you're required to do is to execute the following command
 
@@ -90,6 +101,32 @@ abs diff from sunset (hours): 12.9194
 It's the perfect time to observe the ISS fly by!
 
 You can verify the answers over at https://spotthestation.nasa.gov/tracking_map.cfm
+```
+
+## Running in Docker
+
+Alternatively, if you do not want to install `cmake` on your machine, or you do not happen to have a Linux machine, you can run the application in a docker container. Navigate into the root folder of the project structure and execute the following command.
+
+```
+docker build -t kiv-psi-task03-silhavyj . 
+```
+
+This creates a docker image of the application. Now, all there is left to do is to run the application as a Docker container.
+
+```
+docker run --name iss kiv-psi-task03-silhavyj
+```
+
+You will be promoted with the same output as if you were to run it on your local machine. If you want to repetitively run the application, all you need to do is to use the `start` command.
+
+```
+docker start -a iss
+```
+
+Once you are done testing the application, you can delete the container using the following command.
+
+```
+docker rm iss 
 ```
 
 ## Implementation details
